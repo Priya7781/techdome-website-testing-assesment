@@ -1,0 +1,27 @@
+{
+  "name": "techdome-automation",
+  "version": "1.0.0",
+  "description": "Playwright E2E test suite for techdome.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --project=chromium --project=firefox --project=webkit",
+    "test:e2e": "npx playwright test tests/e2e/",
+    "test:integration": "npx playwright test tests/integration/",
+    "test:security": "npx playwright test tests/security/",
+    "test:load": "npx playwright test tests/load/ --workers=5 --project=load",
+    "test:load:k6": "k6 run load/load.k6.js",
+    "test:all": "npx playwright test --project=chromium --project=firefox --project=webkit",
+    "report": "npx playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
